@@ -1,7 +1,6 @@
-# 🧑‍💻 relaxdays-challenge
+# 🧑‍💻 relaxdays-challenge-compression
 
-Template project for tasks of the Relaxdays Code Challenge Vol. 1.
-Replace `<PORT>` and `<COMMAND>` with appropriate values after forking.
+Compress Dokerfiles. Silly idea, though...
 
 This project was created in the Relaxdays Code Challenge Vol. 1.
 See the [hackathon homepage](https://sites.google.com/relaxdays.de/hackathon-relaxdays/startseite) for more information.
@@ -12,7 +11,7 @@ My participant ID in the challenge was: `CC-VOL1-54`
 First you need to clone this repository:
 
 ```shell script
-git clone https://github.com/heinrichreimer/relaxdays-challenge.git
+git clone https://github.com/heinrichreimer/relaxdays-challenge-compression.git
 cd relaxdays-challenge/
 ```
 
@@ -22,16 +21,20 @@ cd relaxdays-challenge/
 1. Build a Docker container with this project:
 
     ```shell script
-    docker build -t relaxdays-challenge .
+    docker build -t relaxdays-challenge-compression .
     ```
 
-1. Start the Docker container:
+1. Compress:
 
     ```shell script
-    docker run -v $(pwd):/app -p <PORT>:<PORT> -it relaxdays-challenge
+    docker run -v $(pwd):/data -it relaxdays-challenge-compression --compress /data/Dockerfile
     ```
 
-1. The app is now running on [`localhost:<PORT>`](http://localhost:<PORT>/)
+1. Decompress:
+
+    ```shell script
+    docker run -v $(pwd):/data -it relaxdays-challenge-compression --decompress /data/Dockerfile.compressed
+    ```
 
 ### Local machine
 
@@ -42,10 +45,16 @@ cd relaxdays-challenge/
     pipenv install
     ```
 
-1. Run the notebook:
+1. Compress:
 
     ```shell script
-    pipenv run <COMMAND>
+    pipenv run python main.py --compress Dockerfile
+    ```
+
+1. Decompress:
+
+    ```shell script
+    pipenv run python main.py --decompress Dockerfile.compressed
     ```
 
 1. The app is now running on [`localhost:<PORT>`](http://localhost:<PORT>/)

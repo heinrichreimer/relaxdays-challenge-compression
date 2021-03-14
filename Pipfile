@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 flasgger = "*"
+autopep8 = "*"
+flake8 = "*"
+pylint = "*"
 
 [dev-packages]
 
