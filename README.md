@@ -12,7 +12,7 @@ First you need to clone this repository:
 
 ```shell script
 git clone https://github.com/heinrichreimer/relaxdays-challenge-compression.git
-cd relaxdays-challenge/
+cd relaxdays-challenge-compression/
 ```
 
 ### Docker container
